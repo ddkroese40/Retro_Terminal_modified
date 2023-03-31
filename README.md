@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# QMLTermWidget
-=======
 # cool-retro-term
 
 |> Default Amber|C:\ IBM DOS|$ Default Green|
