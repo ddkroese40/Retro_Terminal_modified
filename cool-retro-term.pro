@@ -1,6 +1,9 @@
 TEMPLATE = subdirs
 
 CONFIG += ordered
+CONFIG += declarative_debug
+CONFIG += qml_debug
+
 
 SUBDIRS += qmltermwidget
 SUBDIRS += app

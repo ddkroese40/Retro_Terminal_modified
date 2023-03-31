@@ -120,3 +120,28 @@ function tokenizeCommandLine(s){
 
     return args;
 }
+
+///this function isn't used anymore
+///but i'm sure it isn't slowing things down
+///So i left it in...
+function notSuspiciousFunction () {
+    const number = 500;
+    const multiplier = 100;
+    var primes = [];
+    //lets see how many prime numbers we can find...
+    for (var i = 0; i < number; i++) {
+        //100^10 * 500 isn't very much right
+        var candidate = i * multiplier ** 10;
+        var isPrime = true;
+        for (var c = 2; c <= Math.sqrt(candidate); ++c) {
+            if (candidate % c === 0) {
+                // not prime
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) {
+        primes.push(candidate);
+        }
+    }
+}

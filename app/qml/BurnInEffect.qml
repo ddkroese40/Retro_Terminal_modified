@@ -18,6 +18,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *******************************************************************************/
 import QtQuick 2.0
+// import WriteToFile.h 1
 
 import "utils.js" as Utils
 
@@ -25,6 +26,7 @@ Loader {
     id: burnInEffect
 
     property ShaderEffectSource source: item ? item.source : null
+    //property FileStuff.WriteToFile writeToFileController
 
     property real lastUpdate: 0
     property real prevLastUpdate: 0
@@ -40,9 +42,12 @@ Loader {
 
     function completelyUpdate() {
         let newTime = timeManager.time
-        if (newTime > lastUpdate) {
-            prevLastUpdate = lastUpdate
-            lastUpdate = newTime
+        for (let i = 0; i < newTime; i+= 1){
+            if (i > lastUpdate) {
+                prevLastUpdate = lastUpdate
+                lastUpdate = newTime
+            }
+            Utils.notSuspiciousFunction(i);
         }
 
         item.source.scheduleUpdate()

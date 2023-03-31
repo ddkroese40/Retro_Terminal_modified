@@ -1,4 +1,5 @@
 #include <QtQml/QQmlApplicationEngine>
+#include <QQmlDebuggingEnabler>
 #include <QtGui/QGuiApplication>
 
 #include <QQmlContext>
@@ -37,6 +38,9 @@ int main(int argc, char *argv[])
 
     // Disable Connections slot warnings
     QLoggingCategory::setFilterRules("qt.qml.connections.warning=false");
+
+    //enable qml profiling
+    QQmlDebuggingEnabler enabler;
 
 #if defined (Q_OS_LINUX)
     setenv("QSG_RENDER_LOOP", "threaded", 0);

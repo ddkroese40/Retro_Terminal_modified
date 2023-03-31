@@ -5,15 +5,21 @@ DESTDIR = $$OUT_PWD/../
 
 HEADERS += \
     fileio.h \
-    monospacefontmanager.h
+    monospacefontmanager.h \
+    qml/WriteToFile.h
 
 SOURCES = main.cpp \
     fileio.cpp \
-    monospacefontmanager.cpp
+    monospacefontmanager.cpp \
+    qml/WriteToFile.cpp
 
 macx:ICON = icons/crt.icns
 
 RESOURCES += qml/resources.qrc
+
+CONFIG += qmltypes
+QML_IMPORT_NAME = <qml/WriteToFile.h>
+QML_IMPORT_MAJOR_VERSION = <1>
 
 #########################################
 ##              INTALLS
